@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import {
   Save, User, Wallet, Moon, Sun,
   ArrowLeft, Loader2, Zap, MapPin
@@ -96,31 +95,29 @@ export default function Settings() {
   const { user, setUser } = useAuth();
   const { isDarkMode, toggleTheme } = useTheme();
 
-  // Profile fields
-  const [displayName, setDisplayName] = useState(user?.display_name || '');
-  const [email, setEmail]             = useState(user?.email || '');
+  // Profile fields - initialize empty, will sync from user in useEffect
+  const [displayName, setDisplayName] = useState('');
+  const [email, setEmail]             = useState('');
 
   // Budget — always in INR ₹
-  const [budget, setBudget] = useState(user?.budget || 2000);
+  const [budget, setBudget] = useState(2000);
 
   // Indian state for slab billing
-  const [state, setState] = useState(user?.state || 'Tamil Nadu');
+  const [state, setState] = useState('Tamil Nadu');
 
   // Monthly unit limit (kWh)
-  const [unitLimit, setUnitLimit] = useState(
-    user?.monthly_unit_limit || 200
-  );
+  const [unitLimit, setUnitLimit] = useState(200);
 
   const [isLoading, setIsLoading]   = useState(false);
   const [profileMsg, setProfileMsg] = useState('');
   const [budgetMsg, setBudgetMsg]   = useState('');
 
-  // Sync when user loads
+  // Sync when user loads - safe to call setState here as this is data synchronization
   useEffect(() => {
     if (user) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setDisplayName(user.display_name || '');
       setEmail(user.email || '');
-      // Budget is always stored in INR
       setBudget(user.budget || 2000);
       setState(user.state || 'Tamil Nadu');
       setUnitLimit(user.monthly_unit_limit || 200);

@@ -410,7 +410,7 @@ export default function Dashboard() {
       .catch(err =>
         console.error('[Simulator] Failed to sync load to backend:', err)
       );
-  }, [appliances]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [appliances]);
 
 
   // ── Computed values (all in ₹ INR) ────────────────────

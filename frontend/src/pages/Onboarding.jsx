@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { Zap, CheckCircle2 } from 'lucide-react';
 import api from '../api';
@@ -9,7 +8,6 @@ import { useAuth } from '../context/AuthContext';
 export default function Onboarding() {
   const [step, setStep] = useState(1);
   const { user } = useAuth();
-  const navigate = useNavigate();
 
   // Step 2 State
   const [houseSize, setHouseSize] = useState('');

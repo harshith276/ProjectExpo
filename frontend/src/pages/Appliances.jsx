@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef, useId, useEffect } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, Plus, Trash2, Plug, ZapOff, Loader2 } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -6,9 +7,10 @@ import api from '../api';
 
 // ─── Animated Toggle Switch ────────────────────────────────────────────────
 function ToggleSwitch({ isActive, onToggle, loading }) {
+  const toggleId = useId();
   return (
     <button
-      id={`toggle-switch-${Math.random()}`}
+      id={`toggle-switch-${toggleId}`}
       onClick={onToggle}
       disabled={loading}
       aria-label={isActive ? 'Turn OFF' : 'Turn ON'}

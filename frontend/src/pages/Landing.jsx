@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import React, { useState } from 'react';
+// eslint-disable-next-line no-unused-vars
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Zap, Activity, BrainCircuit, Home, CheckCircle2, Star, Menu, X } from 'lucide-react';
 
@@ -57,7 +58,7 @@ export default function Landing() {
               transition={{ duration: 0.8 }}
               className="text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-6"
             >
-              Take Control of <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">Your Energy.</span>
+              Take Control of <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">Electricity Consumption.</span>
             </motion.h1>
             
             <motion.div

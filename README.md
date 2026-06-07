@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # VoltVision AI
 
 VoltVision AI is a real-time power grid monitoring, cost projection, and virtual appliance simulation web application.
@@ -85,6 +84,3 @@ npm run dev
 
 ### External Providers (`/api/currency`)
 - `GET /api/currency/rate?from=USD&to=INR`: Resolves FrankFurter API live quotes with memory expiration layers.
-=======
-# ProjectExpo
->>>>>>> 05de0ecebf6ab0c952a84670e9d2e466fc2b1bc5

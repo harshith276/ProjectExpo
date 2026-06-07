@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import { Settings, Plus, Trash2, Zap, ZapOff, Loader2, ArrowRight } from 'lucide-react';
 import api from '../api';
